@@ -68,7 +68,7 @@ public class M2RepoReaperWrapper extends BuildWrapper {
 		}
 
 		if (!moduleSet.usesPrivateRepository()) {
-			return null;
+			throw new IOException("M2 repository cleaning can only be used with a private repository");
 		}
 
 		String repoPath = build.getWorkspace().child(".repository").getRemote();
